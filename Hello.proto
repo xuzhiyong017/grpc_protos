@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc";
+
+message Request{
+  string username = 1;
+  int32 age = 2;
+  string password = 3;
+}
+
+message Response{
+  string message = 1;
+}
+
+service LoginServer{
+  rpc login(Request) returns (Response){}
+}
